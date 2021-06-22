@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    
+    <div id="exercise">
+        
+        <!-- 4) Google üzerinden bulacağınız herhangi bir fotoğrafı <img> elementinde gösterme işlemini yapınızı. Bunu yaparken "src" attribute' una bind etmeyi unutmayınız -->
+        <img v-bind:src="photo.img" /> 
+        
+        <!-- 1) Interpolation yani {{}} Syntax'ını kullanarak <p> elementinin içeriğini Name ve Age verileriyle doldurun-->
+        <!-- <p>{{name}}({{age}})</p> -->
+        <!-- 2) Yaşınızı 5 ile çarpıp <p> içerisinde yazdırınız -->
+        
+        <p>{{yas()}}</p>
+    
+        <!-- 3) Fonksiyon çağırarak 0 ile 1 arasında bir sayı üretip <p> içerisinde yazdırınız (Math.random()) -->
+        <p>{{random()}}</p>
+    
+        <!-- 5) Name değişkeninin değerinin <input /> içine yazdığınız değer ile anlık olarak değiştirilmesini sağlayınız. ("value" attribute kullanarak) -->
+        <div>
+            <input type="text" placeholder="Adınızı giriniz" v-on:input="changeName">
+            <p >{{name}}</p>
+            <input type="text "placeholder="Yaşınızı giriniz" v-on:input="changeAge">
+            <p>{{age}}</p>
+            
+            
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    new Vue({
+      el:'#exercise',
+      data:{
+        name:'Murat ÇAYIR',
+        age:25,
+        photo :{
+            img:"https://img1.pngindir.com/20180407/gse/kisspng-vue-js-javascript-framework-front-and-back-ends-gi-technical-5ac9109e6cb7f5.5357905715231264304453.jpg"
+        }
+      },
+      methods:{
+          yas : function(){
+          return this.age*5
+        },
+        random:function(){
+            return (Math.random(0,1))
+        },
+
+        changeName:function(event){
+            this.name=event.target.value
+           
+        },
+        changeAge:function(event){ 
+            this.age=event.target.value
+        }
+       
+      }
+     
+
+    })
+    </script>
+</body>
+</html>
