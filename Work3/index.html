@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+     <!-- <button v-on:click="showAlert">Alert göster</button> -->
+     <button v-on:click="showAlert('murat')">Alert göster</button>
+     <button v-on:click="counter++">Arttır 1</button>
+     <button v-on:click="counter--">Azalt 1</button>
+     <!-- <button v-on:click="increaseCounter">Arttır 2</button> -->
+     <button v-on:click="increaseCounter(3,$event)">Arttır 2</button>
+     <p>{{counter}}</p>
+     <p v-on:mousemove="updateCoords(2,$event)">Koordinatlar: {{x}}  , {{y}}
+       <span v-on:mousemove.stop>Etkisiz alan</span>
+     </p>
+     <input type="text" v-on:keyup.enter.space="showKeyup">
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+        counter:0,
+        x:0,
+        y:0
+        },
+        methods:{
+            // showAlert:function(){
+            //   alert()
+            // },
+            showAlert:function(name){
+              alert(name)
+            },
+            // increaseCounter:function(){
+            //   this.counter++;
+            // },
+            increaseCounter:function(step){
+              this.counter+=step;
+            },
+            updateCoords:function(step,event){
+              this.counter+=step;
+              this.x=event.clientX;
+              this.y=event.clientY;
+            },
+            showKeyup:function(event){
+             alert(event.target.value)
+            }
+
+        }
+        
+      });
+    </script>
+    
+  </body>
+</html>
