@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+    
+   
+     <button v-on:click="counter++">Arttır</button>
+     <button v-on:click="counter--">Azalt</button>
+     <button v-on:click="secondCounter++">2. counter'ı arttır</button>
+     <p>counter :{{ counter }}/p>
+     <p>{{ result() }}</p>
+     
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: "#app",
+        data: {
+        counter:0,
+        secondCounter:0 
+        },
+        methods:{
+        
+            // increase:function(){
+            // this.counter++;
+            // this.result=this.counter>10 ? "10 dan büyük değer ":"10 dan kücük değer"
+            // },
+            // dearease:function(){
+            // this.counter--;
+            // this.result=this.counter>10 ? "10 dan büyük değer ":"10 dan kücük değer"
+            // }
+
+            result:function()
+            {
+            console.log("methos calisti")
+            return this.counter>10 ? "10 dan büyük değer ":"10 dan kücük değer"
+            }
+        },
+        computed: {
+        output :function(){
+          console.log("Computed calisti")
+          return this.counter>10 ? "10 dan büyük değer ":"10 dan kücük değer"
+        }},
+
+        watch : {
+          counter : function(value){
+            vm = this;
+            setTimeout(function(){
+              vm.counter=0
+            },1500)
+          }
+        }
+        
+      });
+    </script>
+    
+  </body>
+</html>
