@@ -28,37 +28,31 @@
     </style>
   </head>
   <body>
-
-
-
-
-    <div id="app">
+<div id="app">
     
-   <div 
-   @click="attachedClass = !attachedClass"
-   :class="divClass"
-   class="box"></div>
-   <div :class="{aqua:attachedClass}" class="box"></div>
-   <div :class="[color,{aqua:attachedClass}]" class="box"></div>
+     <div :style="{'background-color' :color}" class="box" ></div>
+     <div :style="customStyle" class="box"></div>
+     <div :style="" class="box"></div>
    <hr>
    <input type="text" v-model="color">
-    </div>
+   <input type="text" v-model="height">
+</div>
 
     <script type="text/javascript">
       new Vue({
         el: "#app",
         data:{
-          attachedClass:false,
-          color:"orange"
+          color:"orange",
+          height:100
         },
-        computed : {
-        divClass:function(){
-           return{
-            yellow :this.attachedClass,
-            aqua:!this.attachedClass
-           }
+        computed:{
+          customStyle:function(){
+          return{
+            backgroundColor:this.color,
+            height : this.height+"px"
+          }
+          }
         }
-      }
       });
     </script>
     
