@@ -21,6 +21,10 @@
       .aqua{
         background-color: aqua;
       }
+
+      .orange{
+        background-color: orange;
+      }
     </style>
   </head>
   <body>
@@ -34,9 +38,10 @@
    @click="attachedClass = !attachedClass"
    :class="divClass"
    class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-     
+   <div :class="{aqua:attachedClass}" class="box"></div>
+   <div :class="[color,{aqua:attachedClass}]" class="box"></div>
+   <hr>
+   <input type="text" v-model="color">
     </div>
 
     <script type="text/javascript">
@@ -44,6 +49,7 @@
         el: "#app",
         data:{
           attachedClass:false,
+          color:"orange"
         },
         computed : {
         divClass:function(){
