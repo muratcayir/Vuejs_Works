@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
  
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <div id="exercise">
-      <!-- 1) Efekti Butona basarak başlatın. Efekt "highlight" ve/veya "shrink" class'ları arasında değişmelidir. Bu değişim her bir interval döngüsünde olmalıdır. ("effect" id' li div'e o anki aktif olan class eklenecektir.) -->
-      <div>
-        <button @click="startEffect">Efekti Başlat!</button>
-        <div id="effect" :class="updateEffectClass"></div>
-      </div>
-      <!-- 2) Birkaç tane CSS Class'ı üreterek bu Class'ları Array Syntax'ı ile aşağıdaki <div>' e ekleyiniz -->
-      <div :class="['font', 'yellow']">Henüz bir class'ım yok :(</div>
-      <!-- 3) Örnek birkaç tane Class üreterek (Ya da ürettiklerinizi kullanarak) <input> içerisine Class adı girerek hemen alttaki <div> elementine bu yazılan Class'ı eklemeyi yapınız. -->
-      <div>
-        <input type="text" v-model="myClass">
-        <div :class="myClass">Deneme Yazısı...</div>
-      </div>
-      <!-- 4) Kullanıcının Class isimlerini girebileceği iki adet <input> elementimiz var. Bunları kullanarak hemen alttaki <div> elementinin Class'larini attached etmesini sağlayınız  -->
-      <div>
-        <input type="text" v-model="userClass">
-        <input type="text" v-model="userClass2">
-        <div :class="[userClass, userClass2]"> Soru 4</div>
-      </div>
-      <!-- 5) 3.Uygulamayı tekrarlayın. Fakat bu sefer Class Adı yerine Denk gelecek Style Kodlarını ekleyiniz.  -->
-      <div>
-        <input type="text" v-model="myStyle.backgroundColor">
-        <div :style="myStyle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
-      </div>
-      <!-- 6) setInterval ve Style Binding kullanarak Basit bir progress bar üretin. Progress bar' ın çalışmasını buton'a basarak başlatın. -->
-      <hr>
-      <div>
-        <button v-on:click="startProgress">Progress İşlemini Başlat!</button>
-      <br><br>
-        <div class="progress" :style="{width : progressWidth + 'px'}"></div>
-      </div>
-    </div>
-  </body>
+<div id="exercise">
+  <!-- 1) Efekti Butona basarak başlatın. Efekt "highlight" ve/veya "shrink" class'ları arasında değişmelidir. Bu değişim her bir interval döngüsünde olmalıdır. ("effect" id' li div'e o anki aktif olan class eklenecektir.) -->
+  <div>
+    <button @click="startEffect = !startEffect">Efekti Başlat!</button>
+    <div id="effect" :class="divClass"></div>
+  </div>
+  <!-- 2) Birkaç tane CSS Class'ı üreterek bu Class'ları Array Syntax'ı ile aşağıdaki <div>' e ekleyiniz -->
+  <div>Henüz bir class'ım yok :(</div>
+  <!-- 3) Örnek birkaç tane Class üreterek (Ya da ürettiklerinizi kullanarak) <input> içerisine Class adı girerek hemen alttaki <div> elementine bu yazılan Class'ı eklemeyi yapınız. -->
+  <div>
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 4) Kullanıcının Class isimlerini girebileceği iki adet <input> elementimiz var. Bunları kullanarak hemen alttaki <div> elementinin Class'larini attached etmesini sağlayınız  -->
+  <div>
+    <input type="text">
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 5) 3.Uygulamayı tekrarlayın. Fakat bu sefer Class Adı yerine Denk gelecek Style Kodlarını ekleyiniz.  -->
+  <div>
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 6) setInterval ve Style Binding kullanarak Basit bir progress bar üretin. Progress bar' ın çalışmasını buton'a basarak başlatın. -->
+  <div >
+    <button v-on:click="startProgress" >Progress İşlemini Başlat!</button>
+    <div></div>
+  </div>
+</div>
+
+</body>
+</html>
+</body>
 </html>

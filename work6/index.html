@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+   
+</style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<!-- <p v-if="show">Bunu yazıyı görebilirsin</p>
+	<p v-else>Bunu yazıyı göremezsin </p>
+	<button @click="show =!show">göster/gizle</button>
+	<p v-if=" sayi < 10 ">10 dan küçük</p>
+	<p v-else-if="sayi>10">10 dan büyük</p>
+	<p v-else>10 a eşit</p> -->
+	<!-- <ul>
+		<li v-for="product in products">{{product}}</li>
+		<li v-for="(product ,index) in products">{{product}}- {{index}}</li>
+	</ul>
+	<hr>
+	<div v-for="(product ,index) in products">
+		<h3>{{product}}</h3>
+		<p>{{index}}</p>
+	</div>
+
+	<template v-for="(product ,index) in products">
+		<h3>{{product}}</h3>
+		<p>{{index}}</p>
+	</template> -->
+
+	<ul>
+		<li v-for="personel in persons">
+			<ul>
+				<li v-for="(value , key) in personel">{{key}} : {{value}}</li>
+			</ul>
+		</li>
+		
+	</ul>
+
+	<span v-for="i in 5 ">{{i}}</span>
+
+</div>
+
+
+<script type="text/javascript">
+    new Vue({
+	el : "#app",
+	data : {
+		// show:false,
+		// sayi:6
+
+		products:["a","b","c","d"],
+		persons:[
+			{name:"murat",surname:"cayir"},
+			{name:"halil",surname:"bilgin"},
+			{name:"mustafa",surname:"simsek"}
+		]
+	},
+	computed : {
+		
+	}
+})
+</script>
+</body>
+</html>
